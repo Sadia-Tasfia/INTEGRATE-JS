@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Integrated JS </title>
+
+  <style>
+    /* body {
+      background-color: violet;
+    } */
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Welcome to my blog website</h1>
+  </header>
+  <main>
+
+    <section>
+      <article class="blog"> 
+        <h3> My New Articles </h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio sint facere est ut vitae! Ducimus expedita laudantium non alias sit consectetur. Amet possimus maiores facilis corporis tenetur veritatis alias neque!</p>
+      </article>
+      <article class="blog">
+        <h3 id="second-title"> My New Articles </h3>
+        <p>Delectus soluta accusantium vitae ex dignissimos hic, repellat sequi aliquid iste sint nemo assumenda dolorum exercitationem odit odio porro aliquam autem voluptatibus, numquam ullam in? Inventore incidunt at labore iure.</p>
+      </article>
+      <article class="blog">
+        <h3 id="third-title"> My New Articles </h3>
+        <p>Non odit harum possimus similique, illo velit odio? Quibusdam quas, culpa accusantium explicabo repudiandae est. Neque aliquam, cum expedita dolorem velit laudantium tempora nesciunt. Ipsam blanditiis commodi illum rem placeat.</p>
+      </article>
+    </section>
+
+    <section id = "fruits-container">
+      <h1 id = "fruits-title"> Fruits section </h1>
+      <ul>
+        <li> Apple </li>
+        <li> Banana </li>
+        <li> Orange </li>
+        <li> Mango </li>
+      </ul>
+    </section>
+
+  </main> 
+
+  <script>
+    // document.getElementsByTagName
+
+    // console.log(document);
+    console.log(document.body);
+    // console.log(document.getElementsByTagName("h3"));
+    console.log(document.getElementsByTagName("article"));
+
+    const blogTiles = document.getElementsByTagName("h3");
+    for(const h3 of blogTiles) {
+      // console.log(h3);
+      console.log(h3.innerText);
+    }
+
+    const blogText = document.getElementsByTagName("p");
+    for(const text of blogText) {
+      // console.log(text);
+      // console.log(text.innerText);
+    }
+
+    // get element by id and style css
+    const secondTitle = document.getElementById("second-title");
+    secondTitle.style.textAlign ="center";
+    secondTitle.style.color ="black";
+    secondTitle.innerText ="Text updated in JS";
+    secondTitle.style.padding ="20px";
+    secondTitle.style.backgroundColor ="salmon"; 
+    // secondTitle.classList.add('') - css add kora ba remove diye remove kora jabe
+
+    // get elements by class name and style css
+    const blogs= document.getElementsByClassName('blog');
+    for(const blog of blogs) {
+      // console.log(blog);
+      blog.style.border = '3px solid orange';
+      blog.style.borderRadius = '5px';
+      blog.style.margin = '5px';
+      blog.style.padding = '15px';
+    }
+
+    // querySelectorAll() -eta dile oi id ba class e sob pawa jabe r oboshhoi css er moto class r id name ke call krte hobe..joto gulo blog r p thakbe sob dibe
+    // querySelector()- eta toh first er part ta paragragh ba blog take dibe
+
+    // query selector and query selector all
+    const someLi = document.querySelector('#fruits-container');
+    console.log(someLi);
+
+    const allLi = document.querySelectorAll('#fruits-container li');
+    for(const li of allLi) {
+      // console.log(li);
+      console.log(li.innerText);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegate</title>
+</head>
+<body>
+  <h1>Explore Event Delegate </h1>
+  <section>
+    <ul id="container">
+      <li class="item"> Lorem, ipsum dolor. </li>
+      <li class="item"> Explicabo, ea sunt? </li>
+      <li class="item"> Necessitatibus, qui s impedit ?</li>
+      <li class="item"> Maiores, molestias  inventore ?</li>
+      <li class="item"> Laborum, non necess itatibus! </li>
+    </ul>
+  </section>
+  
+  <button id="btn-item"> Add Item </button>
+
+
+  <script>
+    // const items= document.getElementsByClassName('item');
+    // for(const item of items){
+    //   item.addEventListener('click', function(){
+    //     // console.log(item);
+    //     // console.log(event.target); // upor line r eta same kaj krbe
+    //     event.target.parentNode.removeChild(event.target);
+    //   });
+    // }
+
+    document.getElementById('container').addEventListener('click',function(){
+      event.target.parentNode.removeChild(event.target);
+    })
+
+    document.getElementById('btn-item').addEventListener('click', function(){
+      const container =document.getElementById('container');
+
+      const li = document.createElement('li');
+      li.innerText = 'New text added';
+      container.appendChild(li);
+    })
+
+
+  </script>
+  
+</body>
+</html>
